@@ -7,6 +7,7 @@ import Pages from 'vite-plugin-pages';
 export default defineConfig({
   plugins: [react(),
     AutoImport({
+      imports: ['react'],
       dts: './src/auto-imports.d.ts',
       resolvers: [AntdResolver()]
     }),    Pages({

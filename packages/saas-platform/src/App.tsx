@@ -1,19 +1,24 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-// import {Typography} from "./auto-imports";
-import Login from "./login.tsx";
+import { ConfigProvider, theme } from 'antd';
+import { useRoutes } from 'react-router-dom';
 
-const {Title} = Typography
-function App() {
-  // const [count, setCount] = useState(0)
-  console.log(Typography,'Typography')
+import routes from '~react-pages';
+const { darkAlgorithm } = theme;
+const App = () => {
+  const isDark = localStorage.getItem('theme')
+    ? localStorage.getItem('theme') === 'dark'
+    : false;
   return (
-      <div>
-          <Login></Login>
-      </div>
-  )
-}
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: '#287DFA',
+        },
+        algorithm: isDark ? [darkAlgorithm] : [],
+      }}
+    >
+      {useRoutes(routes)}
+    </ConfigProvider>
+  );
+};
 
-export default App
+export default App;

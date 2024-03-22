@@ -1,0 +1,27 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x"]
+}
+
+model OrganizationMember {
+  id     String                 @id @default(cuid())
+  role   OrganizationMemberRole
+  userID Int                    @map("user_id")
+  teamID String                 @map("team_id")
+
+  @@map("organization_member")
+}
+
+enum OrganizationMemberRole {
+  OWNER
+  ADMIN
+  DEVELOPER
+  VIEWER
+
+  @@map("organization_member_role")
+}

@@ -6,4 +6,6 @@
 export {}
 declare global {
   const Button: typeof import('antd')['Button']
+  const Input: typeof import('antd')['Input']
+  const Typography: typeof import('antd')['Typography']
 }

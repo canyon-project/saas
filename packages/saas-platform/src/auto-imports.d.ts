@@ -8,6 +8,7 @@ declare global {
   const Button: typeof import('antd')['Button']
   const Form: typeof import('antd')['Form']
   const Input: typeof import('antd')['Input']
+  const Steps: typeof import('antd')['Steps']
   const Typography: typeof import('antd')['Typography']
   const createRef: typeof import('react')['createRef']
   const forwardRef: typeof import('react')['forwardRef']

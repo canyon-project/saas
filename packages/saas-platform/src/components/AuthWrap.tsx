@@ -1,11 +1,11 @@
+import arex from '../assets/img/arex.png';
 import ThirdPartyLogin from './ThirdPartyLogin.tsx';
-import arex from '../assets/img/arex.png'
 const AuthWrap = ({ content, type }) => {
   return (
     <div className={' flex justify-center items-center h-[100vh]'}>
       <div className="pb-20">
         <div
-          className={'grid grid-cols-2 gap-4 w-[1000px] h-[580px] '}
+          className={'grid grid-cols-2 w-[1000px] h-[580px]'}
           style={{
             boxShadow: '0px 20px 80px 0px rgba(0,0,0,0.3)',
           }}
@@ -16,21 +16,22 @@ const AuthWrap = ({ content, type }) => {
               Intelligent Mock mechanism, support Mock time, cache data, etc
             </p>
           </div>
-          <div className="p-10">
-            <div className={'flex justify-between items-end mb-[24px]'}>
-              <span className={'text-[24px]'}>
-                <img src={arex} alt="" className={'h-[36px]'} />
-                {type === 'login' ? '登陆' : '注册'}
+          <div className="p-[60px]">
+            <div className={'flex justify-between items-center mb-[24px]'}>
+              <span className={'text-[20px]'} style={{ fontWeight: 'bolder' }}>
+                <img src={arex} alt="" className={'h-[30px] mr-2'} />
+                {type === 'login' ? 'Login' : 'Sign Up'}
               </span>
 
               <div className={'text-[14px]'}>
                 {type === 'login' ? (
                   <>
-                    没有账号？<a href="/signup">点击这里注册</a>
+                    No account?<a href="/signup" className={'ml-2'}>Click here to sign up</a>
                   </>
                 ) : (
                   <>
-                    已有帐号？ <a href="/login">点此登录</a>
+                    Have an account?
+                    <a href="/login" className={'ml-2'}>Click here to login</a>
                   </>
                 )}
               </div>

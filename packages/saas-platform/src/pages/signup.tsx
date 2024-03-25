@@ -56,20 +56,9 @@ const Signup = () => {
               onFinish={onFinish}
               onFinishFailed={onFinishFailed}
               autoComplete="off"
-              style={{ maxWidth: 384 }}
+              // style={{ maxWidth: 384 }}
             >
               <Form.Item<FieldType>
-                label="Company"
-                name="company"
-                rules={[
-                  { required: true, message: 'Please input your company!' },
-                ]}
-              >
-                <Input />
-              </Form.Item>
-
-              <Form.Item<FieldType>
-                label="Email"
                 name="email"
                 rules={[
                   { required: true, message: 'Please input your email!' },
@@ -79,27 +68,25 @@ const Signup = () => {
                   },
                 ]}
               >
-                <Input />
+                <Input placeholder={'Please input your email'} />
               </Form.Item>
 
               <Form.Item<FieldType>
-                label="Username"
                 name="username"
                 rules={[
                   { required: true, message: 'Please input your username!' },
                 ]}
               >
-                <Input />
+                <Input placeholder={'Please input your username'} />
               </Form.Item>
 
               <Form.Item<FieldType>
-                label="Password"
                 name="password"
                 rules={[
                   { required: true, message: 'Please input your password!' },
                 ]}
               >
-                <Input.Password />
+                <Input.Password placeholder={'Please input your password'} />
               </Form.Item>
 
               <Form.Item>
